@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "highlights-ai"
+version = "0.1.0"
+description = "Generate 3–4 minute highlight videos from long source videos using the Gemini API"
+readme = "README.md"
+authors = []
+packages = [{ include = "highlights_ai" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+google-genai = ">=1.0.0"
+
+[tool.poetry.scripts]
+highlight = "highlights_ai.run_highlight:main"
+
+[tool.poetry.group.dev.dependencies]
+# Add dev deps here if needed, e.g. pytest, ruff
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

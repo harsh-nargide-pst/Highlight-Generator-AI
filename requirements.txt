@@ -1,0 +1,6 @@
+# Video Highlight Generation with Gemini API
+# Python 3.10+
+
+google-genai>=1.0.0
+
+# FFmpeg must be installed on the system (apt install ffmpeg / brew install ffmpeg)

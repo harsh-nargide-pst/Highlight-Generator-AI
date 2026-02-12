@@ -1,0 +1,290 @@
+harsh@Harsh:~/HighlightsAI$ poetry run highlight /home/harsh/Downloads/videoplayback.mp4
+18:09:22 [INFO] highlights_ai.pipeline: Chunks will be saved to: /home/harsh/HighlightsAI/output/chunks/highlights
+18:09:22 [INFO] highlights_ai.pipeline: ============================================================
+18:09:22 [INFO] highlights_ai.pipeline: STEP 1: Chunking source video (full video, overlapping chunks)
+18:09:22 [INFO] highlights_ai.pipeline:   Source: /home/harsh/Downloads/videoplayback.mp4
+18:09:22 [INFO] highlights_ai.pipeline:   Chunk duration: 90s, Overlap: 8s
+18:10:32 [INFO] highlights_ai.pipeline:   Total duration: 0:13:20 (800.4s)
+18:10:32 [INFO] highlights_ai.pipeline:   Number of chunks: 10 (covers full video, no rounds missed)
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 0: 0:00:00 - 0:01:30 -> chunk_0000_00m00s_01m30s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 1: 0:01:22 - 0:02:52 -> chunk_0001_01m22s_02m52s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 2: 0:02:44 - 0:04:14 -> chunk_0002_02m44s_04m14s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 3: 0:04:06 - 0:05:36 -> chunk_0003_04m06s_05m36s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 4: 0:05:28 - 0:06:58 -> chunk_0004_05m28s_06m58s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 5: 0:06:50 - 0:08:20 -> chunk_0005_06m50s_08m20s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 6: 0:08:12 - 0:09:42 -> chunk_0006_08m12s_09m42s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 7: 0:09:34 - 0:11:04 -> chunk_0007_09m34s_11m04s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 8: 0:10:56 - 0:12:26 -> chunk_0008_10m56s_12m26s.mp4
+18:10:32 [INFO] highlights_ai.pipeline:     Chunk 9: 0:12:18 - 0:13:20 -> chunk_0009_12m18s_13m20s.mp4
+18:10:32 [INFO] highlights_ai.pipeline: ============================================================
+18:10:32 [INFO] highlights_ai.pipeline: STEP 2: Analyzing each chunk with Gemini (model: gemini-2.5-flash)
+18:10:32 [INFO] highlights_ai.pipeline: --- Chunk 1/10 [0:00:00 - 0:01:30] ---
+18:10:32 [INFO] highlights_ai.pipeline:   File: chunk_0000_00m00s_01m30s.mp4
+18:10:32 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0000_00m00s_01m30s.mp4
+18:10:33 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:10:34 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5Ucdmg3CTKd7fhl1VsVzCWaqfSSheCrRku8BUmnbfewBAjneCsvg5G57YhPkfB7lUWYkCX3FCJB2LpKuoSp-BjzBjLQ9FZZUe2OosLoUn0&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:10:37 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5Ucdmg3CTKd7fhl1VsVzCWaqfSSheCrRku8BUmnbfewBAjneCsvg5G57YhPkfB7lUWYkCX3FCJB2LpKuoSp-BjzBjLQ9FZZUe2OosLoUn0&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:10:37 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:10:38 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/zdhewr32gdn3 "HTTP/1.1 200 OK"
+18:10:43 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/zdhewr32gdn3 "HTTP/1.1 200 OK"
+18:10:43 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:10:43 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:11:05 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:11:05 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 0:15 0:28 Introduction of Men's 100M Final
+MOMENT: 0:28 0:38 Usain Bolt's World and Olympic Records
+MOMENT: 0:38 0:54 Men's 100M Final Start List
+MOMENT: 0:54 1:00 Usain Bolt preparing
+MOMENT: 1:00 1:08 Tyson Gay preparing
+MOMENT: 1:08 1:14 Usain Bolt focused
+MOMENT: 1:14 1:21 Bolt, Gatlin, Blake on track
+MOMENT: 1:26 1:30 Usain Bolt's intense look
+18:11:05 [INFO] highlights_ai.pipeline:   Parsed moments: 0
+18:11:05 [INFO] highlights_ai.pipeline: --- Chunk 2/10 [0:01:22 - 0:02:52] ---
+18:11:05 [INFO] highlights_ai.pipeline:   File: chunk_0001_01m22s_02m52s.mp4
+18:11:05 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0001_01m22s_02m52s.mp4
+18:11:06 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:11:07 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5Uttr6rclx47BbZPsEypyEcfI2gRcRSb3Ie6S9_GtSCJKownTmdSJnWj5i0X__UBJMDd75Ln5KaTjBnB1kHL3nGqRYP6ILyPnjpTje_BP4&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:11:10 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5Uttr6rclx47BbZPsEypyEcfI2gRcRSb3Ie6S9_GtSCJKownTmdSJnWj5i0X__UBJMDd75Ln5KaTjBnB1kHL3nGqRYP6ILyPnjpTje_BP4&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:11:10 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:11:10 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/qronbltbxl7w "HTTP/1.1 200 OK"
+18:11:15 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/qronbltbxl7w "HTTP/1.1 200 OK"
+18:11:15 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:11:15 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:11:32 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:11:32 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 0:26 0:39 Richard Thompson's introduction and crowd acknowledgement
+MOMENT: 0:39 0:55 Asafa Powell's introduction and crowd acknowledgement
+MOMENT: 0:55 1:13 Tyson Gay's introduction and crowd acknowledgement
+MOMENT: 1:13 1:29 Yohan Blake's introduction and "beast" pose
+18:11:32 [INFO] highlights_ai.pipeline:   Parsed moments: 0
+18:11:32 [INFO] highlights_ai.pipeline: --- Chunk 3/10 [0:02:44 - 0:04:14] ---
+18:11:32 [INFO] highlights_ai.pipeline:   File: chunk_0002_02m44s_04m14s.mp4
+18:11:32 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0002_02m44s_04m14s.mp4
+18:11:32 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:11:34 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UBrUL8WtXg46U2fQO3nUNOyUgqkgDx4kdpe0UKMHxo6Kwm0R6MgzVacFFLm5akjAesO7f4tUuwl6N7GQbC11d9ccyPV7EnPpDI0nRIJ8Y&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:11:37 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UBrUL8WtXg46U2fQO3nUNOyUgqkgDx4kdpe0UKMHxo6Kwm0R6MgzVacFFLm5akjAesO7f4tUuwl6N7GQbC11d9ccyPV7EnPpDI0nRIJ8Y&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:11:37 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:11:37 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/cusazyutwhro "HTTP/1.1 200 OK"
+18:11:43 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/cusazyutwhro "HTTP/1.1 200 OK"
+18:11:43 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:11:43 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:12:03 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:12:03 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 0.00 0.11 Yohan Blake introduction and poses
+MOMENT: 0.11 0.26 Justin Gatlin introduction
+MOMENT: 0.26 0.49 Usain Bolt introduction and signature pose
+MOMENT: 0.49 1.07 Ryan Bailey introduction
+MOMENT: 1.07 1.18 Churandy Martina introduction and gestures
+MOMENT: 1.18 1.29 Sprinters on starting blocks before race
+18:12:03 [INFO] highlights_ai.pipeline:   Parsed moments: 6
+18:12:03 [INFO] highlights_ai.pipeline:     [chunk time] 0.0s - 0.1s: Yohan Blake introduction and poses
+18:12:03 [INFO] highlights_ai.pipeline:     [chunk time] 0.1s - 0.3s: Justin Gatlin introduction
+18:12:03 [INFO] highlights_ai.pipeline:     [chunk time] 0.3s - 0.5s: Usain Bolt introduction and signature pose
+18:12:03 [INFO] highlights_ai.pipeline:     [chunk time] 0.5s - 1.1s: Ryan Bailey introduction
+18:12:03 [INFO] highlights_ai.pipeline:     [chunk time] 1.1s - 1.2s: Churandy Martina introduction and gestures
+18:12:03 [INFO] highlights_ai.pipeline:     [chunk time] 1.2s - 1.3s: Sprinters on starting blocks before race
+18:12:03 [INFO] highlights_ai.pipeline: --- Chunk 4/10 [0:04:06 - 0:05:36] ---
+18:12:03 [INFO] highlights_ai.pipeline:   File: chunk_0003_04m06s_05m36s.mp4
+18:12:03 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0003_04m06s_05m36s.mp4
+18:12:03 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:12:05 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5U9PAwj_jsSBjCGuoABOy8HyPweDd4PLCD6XDZI6r9feD-JZCQ2XkLZp27y7mAdEGKoB41lajs4ddcyNRRG8y4w3bc2Yy7mcRq6yT9Q9Xs&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:12:08 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5U9PAwj_jsSBjCGuoABOy8HyPweDd4PLCD6XDZI6r9feD-JZCQ2XkLZp27y7mAdEGKoB41lajs4ddcyNRRG8y4w3bc2Yy7mcRq6yT9Q9Xs&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:12:08 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:12:08 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/t8ddvqyn24ej "HTTP/1.1 200 OK"
+18:12:13 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/t8ddvqyn24ej "HTTP/1.1 200 OK"
+18:12:13 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:12:13 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:12:31 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:12:31 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 0.0 0.18 Introduction of athletes in the 100m final
+MOMENT: 0.22 0.26 Usain Bolt shushes the crowd
+MOMENT: 0.29 0.35 Athletes getting into starting blocks
+MOMENT: 0.39 0.45 Usain Bolt's intense pre-race focus
+MOMENT: 1.0 1.12 The 100m final race, Usain Bolt wins
+MOMENT: 1.12 1.29 Usain Bolt's celebration after winning
+18:12:31 [INFO] highlights_ai.pipeline:   Parsed moments: 6
+18:12:31 [INFO] highlights_ai.pipeline:     [chunk time] 0.0s - 0.2s: Introduction of athletes in the 100m final
+18:12:31 [INFO] highlights_ai.pipeline:     [chunk time] 0.2s - 0.3s: Usain Bolt shushes the crowd
+18:12:31 [INFO] highlights_ai.pipeline:     [chunk time] 0.3s - 0.3s: Athletes getting into starting blocks
+18:12:31 [INFO] highlights_ai.pipeline:     [chunk time] 0.4s - 0.5s: Usain Bolt's intense pre-race focus
+18:12:31 [INFO] highlights_ai.pipeline:     [chunk time] 1.0s - 1.1s: The 100m final race, Usain Bolt wins
+18:12:31 [INFO] highlights_ai.pipeline:     [chunk time] 1.1s - 1.3s: Usain Bolt's celebration after winning
+18:12:31 [INFO] highlights_ai.pipeline: --- Chunk 5/10 [0:05:28 - 0:06:58] ---
+18:12:31 [INFO] highlights_ai.pipeline:   File: chunk_0004_05m28s_06m58s.mp4
+18:12:31 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0004_05m28s_06m58s.mp4
+18:12:32 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:12:34 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UUKH_SnWaD6qMaZP5D_h85ZdUhiSml9kIhgqX0ahZIiQovx90Km4iP6lKmixByKEJpQsZr57hTnZ27nkzDA-GbLghkt6bZXqUTKlTVog&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:12:36 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UUKH_SnWaD6qMaZP5D_h85ZdUhiSml9kIhgqX0ahZIiQovx90Km4iP6lKmixByKEJpQsZr57hTnZ27nkzDA-GbLghkt6bZXqUTKlTVog&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:12:36 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:12:37 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/sk98614ynsd0 "HTTP/1.1 200 OK"
+18:12:42 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/sk98614ynsd0 "HTTP/1.1 200 OK"
+18:12:42 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:12:42 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:13:14 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:13:14 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 0.0 7.0 Usain Bolt celebrating victory running on track
+MOMENT: 7.0 14.0 Official result and time for Usain Bolt's win displayed
+MOMENT: 14.0 26.0 Usain Bolt kneels down then performs his iconic pose
+MOMENT: 27.0 36.0 Usain Bolt hugs Yohan Blake
+MOMENT: 108.0 111.0 Usain Bolt performs his signature pose again
+18:13:14 [INFO] highlights_ai.pipeline:   Parsed moments: 5
+18:13:14 [INFO] highlights_ai.pipeline:     [chunk time] 0.0s - 7.0s: Usain Bolt celebrating victory running on track
+18:13:14 [INFO] highlights_ai.pipeline:     [chunk time] 7.0s - 14.0s: Official result and time for Usain Bolt's win displayed
+18:13:14 [INFO] highlights_ai.pipeline:     [chunk time] 14.0s - 26.0s: Usain Bolt kneels down then performs his iconic pose
+18:13:14 [INFO] highlights_ai.pipeline:     [chunk time] 27.0s - 36.0s: Usain Bolt hugs Yohan Blake
+18:13:14 [INFO] highlights_ai.pipeline:     [chunk time] 108.0s - 111.0s: Usain Bolt performs his signature pose again
+18:13:14 [INFO] highlights_ai.pipeline: --- Chunk 6/10 [0:06:50 - 0:08:20] ---
+18:13:14 [INFO] highlights_ai.pipeline:   File: chunk_0005_06m50s_08m20s.mp4
+18:13:14 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0005_06m50s_08m20s.mp4
+18:13:15 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:13:16 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5Wpnz_iWPKb3DLm823epMg6BfZ34EAYDFQiH0JRM5ZBaYgFc_VGadm3rD7USUyfEbqogedj-E1Mke0tHq6vFjMSEWZMes7CUuZFAxZY_jM&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:13:18 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5Wpnz_iWPKb3DLm823epMg6BfZ34EAYDFQiH0JRM5ZBaYgFc_VGadm3rD7USUyfEbqogedj-E1Mke0tHq6vFjMSEWZMes7CUuZFAxZY_jM&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:13:18 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:13:19 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/eaiak9wul216 "HTTP/1.1 200 OK"
+18:13:24 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/eaiak9wul216 "HTTP/1.1 200 OK"
+18:13:24 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:13:24 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:13:54 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:13:54 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 0.0 0.15 Usain Bolt celebrating with the crowd
+MOMENT: 0.15 0.20 Justin Gatlin with American flag
+MOMENT: 0.20 0.29 Usain Bolt and Yohan Blake celebrate with Jamaican flags
+MOMENT: 0.29 0.34 Asafa Powell's disappointment
+MOMENT: 0.50 0.56 Race start and initial acceleration
+MOMENT: 1.00 1.07 Usain Bolt pulling ahead in the race
+MOMENT: 1.23 1.30 Usain Bolt dominates the final meters of the race
+18:13:54 [INFO] highlights_ai.pipeline:   Parsed moments: 7
+18:13:54 [INFO] highlights_ai.pipeline:     [chunk time] 0.0s - 0.1s: Usain Bolt celebrating with the crowd
+18:13:54 [INFO] highlights_ai.pipeline:     [chunk time] 0.1s - 0.2s: Justin Gatlin with American flag
+18:13:54 [INFO] highlights_ai.pipeline:     [chunk time] 0.2s - 0.3s: Usain Bolt and Yohan Blake celebrate with Jamaican flags
+18:13:54 [INFO] highlights_ai.pipeline:     [chunk time] 0.3s - 0.3s: Asafa Powell's disappointment
+18:13:54 [INFO] highlights_ai.pipeline:     [chunk time] 0.5s - 0.6s: Race start and initial acceleration
+18:13:54 [INFO] highlights_ai.pipeline:     [chunk time] 1.0s - 1.1s: Usain Bolt pulling ahead in the race
+18:13:54 [INFO] highlights_ai.pipeline:     [chunk time] 1.2s - 1.3s: Usain Bolt dominates the final meters of the race
+18:13:54 [INFO] highlights_ai.pipeline: --- Chunk 7/10 [0:08:12 - 0:09:42] ---
+18:13:54 [INFO] highlights_ai.pipeline:   File: chunk_0006_08m12s_09m42s.mp4
+18:13:54 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0006_08m12s_09m42s.mp4
+18:13:55 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:13:57 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UCVpgXnxlDcI96rRMZOMk_bdKl25F_F3nmerXc5g-x64V5GX5S3juULpy9iNgDPRLbCMnsN1i7LkK1nUYE56LRijDNaBn5XHnWF81k-OY&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:14:00 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UCVpgXnxlDcI96rRMZOMk_bdKl25F_F3nmerXc5g-x64V5GX5S3juULpy9iNgDPRLbCMnsN1i7LkK1nUYE56LRijDNaBn5XHnWF81k-OY&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:14:00 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:14:00 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/q2wzf3r9ilks "HTTP/1.1 200 OK"
+18:14:06 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/q2wzf3r9ilks "HTTP/1.1 200 OK"
+18:14:06 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:14:06 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:14:22 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:14:22 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 0.08 0.15 race finish and results display
+MOMENT: 0.15 0.36 Usain Bolt's initial celebration with the crowd
+MOMENT: 0.36 0.52 Men's 100m final results and Olympic record
+MOMENT: 0.52 1.29 Usain Bolt and Yohan Blake celebrate with fans
+18:14:22 [INFO] highlights_ai.pipeline:   Parsed moments: 4
+18:14:22 [INFO] highlights_ai.pipeline:     [chunk time] 0.1s - 0.1s: race finish and results display
+18:14:22 [INFO] highlights_ai.pipeline:     [chunk time] 0.1s - 0.4s: Usain Bolt's initial celebration with the crowd
+18:14:22 [INFO] highlights_ai.pipeline:     [chunk time] 0.4s - 0.5s: Men's 100m final results and Olympic record
+18:14:22 [INFO] highlights_ai.pipeline:     [chunk time] 0.5s - 1.3s: Usain Bolt and Yohan Blake celebrate with fans
+18:14:22 [INFO] highlights_ai.pipeline: --- Chunk 8/10 [0:09:34 - 0:11:04] ---
+18:14:22 [INFO] highlights_ai.pipeline:   File: chunk_0007_09m34s_11m04s.mp4
+18:14:22 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0007_09m34s_11m04s.mp4
+18:14:23 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:14:24 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UAe1ikSWDnM-34wdeZK4k_0wenRLEnZJiY9Bsw54or_WJ8gluLJ9JAmdwaYP6HKEV93Dbd-F4ZWsPEWafD2sffYqmdKPFGoCkYziLtHQ&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:14:28 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UAe1ikSWDnM-34wdeZK4k_0wenRLEnZJiY9Bsw54or_WJ8gluLJ9JAmdwaYP6HKEV93Dbd-F4ZWsPEWafD2sffYqmdKPFGoCkYziLtHQ&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:14:28 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:14:28 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/dc2nnnr088i6 "HTTP/1.1 200 OK"
+18:14:33 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/dc2nnnr088i6 "HTTP/1.1 200 OK"
+18:14:33 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:14:33 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:14:49 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:14:49 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 9.0 16.5 Race start in slow motion
+MOMENT: 16.5 39.0 Usain Bolt finishes and celebrates, looking at clock
+MOMENT: 39.0 52.5 Yohan Blake finishes and reacts to his time
+MOMENT: 52.5 106.0 Justin Gatlin finishes
+MOMENT: 117.0 129.0 Usain Bolt's celebratory roll
+18:14:49 [INFO] highlights_ai.pipeline:   Parsed moments: 5
+18:14:49 [INFO] highlights_ai.pipeline:     [chunk time] 9.0s - 16.5s: Race start in slow motion
+18:14:49 [INFO] highlights_ai.pipeline:     [chunk time] 16.5s - 39.0s: Usain Bolt finishes and celebrates, looking at clock
+18:14:49 [INFO] highlights_ai.pipeline:     [chunk time] 39.0s - 52.5s: Yohan Blake finishes and reacts to his time
+18:14:49 [INFO] highlights_ai.pipeline:     [chunk time] 52.5s - 106.0s: Justin Gatlin finishes
+18:14:49 [INFO] highlights_ai.pipeline:     [chunk time] 117.0s - 129.0s: Usain Bolt's celebratory roll
+18:14:49 [INFO] highlights_ai.pipeline: --- Chunk 9/10 [0:10:56 - 0:12:26] ---
+18:14:49 [INFO] highlights_ai.pipeline:   File: chunk_0008_10m56s_12m26s.mp4
+18:14:49 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0008_10m56s_12m26s.mp4
+18:14:50 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:14:51 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UJYsY80F8TLWKaOljc6g0eQcZocRDJzdoaIThEGngdl7bTvnt3bOTeXm3YnoZu2mQvZ1utJqUEB0mWcUq19MwlOmVm6E7iZNc3uDKu99M&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:14:54 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5UJYsY80F8TLWKaOljc6g0eQcZocRDJzdoaIThEGngdl7bTvnt3bOTeXm3YnoZu2mQvZ1utJqUEB0mWcUq19MwlOmVm6E7iZNc3uDKu99M&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:14:54 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:14:54 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/4pmsev23q69n "HTTP/1.1 200 OK"
+18:15:00 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/4pmsev23q69n "HTTP/1.1 200 OK"
+18:15:00 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:15:00 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:15:19 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:15:19 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 5.0 7.0 Usain Bolt trips over a camera
+MOMENT: 31.0 40.0 Primoz Kozmus's hammer throw
+MOMENT: 118.0 121.0 Primoz Kozmus's 79.36m hammer throw result
+MOMENT: 121.0 130.0 Usain Bolt and Yohan Blake celebrate with Jamaican flags
+18:15:19 [INFO] highlights_ai.pipeline:   Parsed moments: 4
+18:15:19 [INFO] highlights_ai.pipeline:     [chunk time] 5.0s - 7.0s: Usain Bolt trips over a camera
+18:15:19 [INFO] highlights_ai.pipeline:     [chunk time] 31.0s - 40.0s: Primoz Kozmus's hammer throw
+18:15:19 [INFO] highlights_ai.pipeline:     [chunk time] 118.0s - 121.0s: Primoz Kozmus's 79.36m hammer throw result
+18:15:19 [INFO] highlights_ai.pipeline:     [chunk time] 121.0s - 130.0s: Usain Bolt and Yohan Blake celebrate with Jamaican flags
+18:15:19 [INFO] highlights_ai.pipeline: --- Chunk 10/10 [0:12:18 - 0:13:20] ---
+18:15:19 [INFO] highlights_ai.pipeline:   File: chunk_0009_12m18s_13m20s.mp4
+18:15:19 [INFO] highlights_ai.gemini_analysis: Uploading chunk to Gemini Files API: chunk_0009_12m18s_13m20s.mp4
+18:15:20 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files "HTTP/1.1 200 OK"
+18:15:23 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/upload/v1beta/files?upload_id=AJRbA5WpMswi5fFbgjaza0QGE0FJmrEkmW8K96irUFA0gpvRXW0t7CcNhzJNQJTeD6tZ-FITCcMwgylOUlyyxzllLWtfvUj_qk0Nz62wn0foFx0&upload_protocol=resumable "HTTP/1.1 200 OK"
+18:15:23 [INFO] highlights_ai.gemini_analysis: Waiting for file to reach ACTIVE state (polling every 5s)...
+18:15:23 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/3f6qwbhbw8u2 "HTTP/1.1 200 OK"
+18:15:29 [INFO] httpx: HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/files/3f6qwbhbw8u2 "HTTP/1.1 200 OK"
+18:15:29 [INFO] highlights_ai.gemini_analysis: File is ACTIVE, calling Gemini for analysis.
+18:15:29 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+18:15:42 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+18:15:42 [INFO] highlights_ai.pipeline:   Gemini output:
+MOMENT: 0.0 8.0 Runners celebrating with flags
+MOMENT: 9.0 11.0 Runners at starting blocks
+MOMENT: 11.0 28.0 The 100m race
+MOMENT: 28.0 38.0 Usain Bolt crosses finish line
+MOMENT: 38.0 48.0 Jamaican fans celebrating
+MOMENT: 50.0 103.0 Usain Bolt's iconic pose
+18:15:42 [INFO] highlights_ai.pipeline:   Parsed moments: 6
+18:15:42 [INFO] highlights_ai.pipeline:     [chunk time] 0.0s - 8.0s: Runners celebrating with flags
+18:15:42 [INFO] highlights_ai.pipeline:     [chunk time] 9.0s - 11.0s: Runners at starting blocks
+18:15:42 [INFO] highlights_ai.pipeline:     [chunk time] 11.0s - 28.0s: The 100m race
+18:15:42 [INFO] highlights_ai.pipeline:     [chunk time] 28.0s - 38.0s: Usain Bolt crosses finish line
+18:15:42 [INFO] highlights_ai.pipeline:     [chunk time] 38.0s - 48.0s: Jamaican fans celebrating
+18:15:42 [INFO] highlights_ai.pipeline:     [chunk time] 50.0s - 103.0s: Usain Bolt's iconic pose
+18:15:42 [INFO] highlights_ai.pipeline: ============================================================
+18:15:42 [INFO] highlights_ai.pipeline: STEP 3: Normalizing timestamps and merging segments
+18:15:42 [INFO] highlights_ai.pipeline:   Total segments from all chunks: 39
+18:15:42 [INFO] highlights_ai.pipeline:   After merging overlapping/adjacent: 8 segments
+18:15:42 [INFO] highlights_ai.pipeline:   After capping to 240s: 8 segments, total 193.5s
+18:15:42 [INFO] highlights_ai.pipeline: ============================================================
+18:15:42 [INFO] highlights_ai.pipeline: STEP 4: Building highlight video
+18:15:42 [INFO] highlights_ai.pipeline:   Output path: /home/harsh/HighlightsAI/output/highlights.mp4
+18:15:42 [INFO] highlights_ai.pipeline:   Extracting segments from original video and concatenating...
+18:16:17 [INFO] highlights_ai.pipeline:   Done. Highlight written to: /home/harsh/HighlightsAI/output/highlights.mp4
+18:16:17 [INFO] highlights_ai.pipeline: ============================================================
+============================================================
+HIGHLIGHT GENERATION COMPLETE
+============================================================
+Source:        /home/harsh/Downloads/videoplayback.mp4
+Source length: 0:13:20
+Chunks saved:   /home/harsh/HighlightsAI/output/chunks/highlights
+Highlight:     /home/harsh/HighlightsAI/output/highlights.mp4
+Highlight len: 0:03:13 (193.5s)
+Chunks analyzed: 10
+
+Selected segments:
+  0:02:44 - 0:02:45  Yohan Blake introduction and poses
+  0:04:06 - 0:04:07  Introduction of athletes in the 100m final
+  0:05:28 - 0:06:04  Usain Bolt celebrating victory running on track
+  0:06:50 - 0:06:51  Usain Bolt celebrating with the crowd
+  0:08:12 - 0:08:13  race finish and results display
+  0:09:43 - 0:11:04  Race start in slow motion
+  0:11:27 - 0:11:36  Primoz Kozmus's hammer throw
+  0:12:18 - 0:13:20  Runners celebrating with flags
+
+/home/harsh/HighlightsAI/output/highlights.mp4
+harsh@Harsh:~/HighlightsAI$ 
